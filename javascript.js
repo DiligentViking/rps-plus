@@ -20,52 +20,59 @@ function getComputerChoice() {
 }
 
 
-let humanScore = 0
-let computerScore = 0
+function playGame() {
+  let humanScore = 0
+  let computerScore = 0
 
+  function playRound(humanChoice, computerChoice) {
+    let msg
 
-function playRound(humanChoice, computerChoice) {
-  let msg
+    if (humanChoice == 'rock') {
+      if (computerChoice == 'rock') {
+        msg = "It's a tie! Rock bumps against rock.";
+        humanScore += 1;
+        computerScore += 1;
+      } else if (computerChoice == 'paper') {
+        msg = "You lose! Paper permeates rock. (somehow)";
+        computerScore += 1;
+      } else if (computerChoice == 'scissor') {
+        msg = "You win! Rock clobbers scissor";
+        humanScore += 1;
+      }
+    } else if (humanChoice == 'paper') {
+      if (computerChoice == 'rock') {
+        msg = "You win! Paper permeates rock. (somehow)";
+        humanScore += 1;
+      } else if (computerChoice == 'paper') {
+        msg = "It's a tie! Paper slithers on paper.";
+        humanScore += 1;
+        computerScore += 1;
+      } else if (computerChoice == 'scissor') {
+        msg = "You lose! Scissor cuts down paper";
+        computerScore += 1;
+      }
+    } else if (humanChoice == 'scissor') {
+      if (computerChoice == 'rock') {
+        msg = "You lose! Rock clobbers scissor";
+        computerScore += 1;
+      } else if (computerChoice == 'paper') {
+        msg = "You win! Scissor cuts down paper";
+        humanScore += 1;
+      } else if (computerChoice == 'scissor') {
+        msg = "It's a tie! Scissor wedge on scissor.";
+        humanScore += 1;
+        computerScore += 1;
 
-  if (humanChoice == 'rock') {
-    if (computerChoice == 'rock') {
-      msg = "It's a tie! Rock bumps against rock.";
-      humanScore += 1;
-      computerScore += 1;
-    } else if (computerChoice == 'paper') {
-      msg = "You lose! Paper permeates rock. (somehow)";
-      computerScore += 1;
-    } else if (computerChoice == 'scissor') {
-      msg = "You win! Rock clobbers scissor";
-      humanScore += 1;
-    }
-  } else if (humanChoice == 'paper') {
-    if (computerChoice == 'rock') {
-      msg = "You win! Paper permeates rock. (somehow)";
-      humanScore += 1;
-    } else if (computerChoice == 'paper') {
-      msg = "It's a tie! Paper slithers on paper.";
-      humanScore += 1;
-      computerScore += 1;
-    } else if (computerChoice == 'scissor') {
-      msg = "You lose! Scissor cuts down paper";
-      computerScore += 1;
-    }
-  } else if (humanChoice == 'scissor') {
-    if (computerChoice == 'rock') {
-      msg = "You lose! Rock clobbers scissor";
-      computerScore += 1;
-    } else if (computerChoice == 'paper') {
-      msg = "You win! Scissor cuts down paper";
-      humanScore += 1;
-    } else if (computerChoice == 'scissor') {
-      msg = "It's a tie! Scissor wedge on scissor.";
-      humanScore += 1;
-      computerScore += 1;
+    console.log(msg)
+    console.log(`You: ${humanScore}`)
+    console.log(`CPU: ${computerScore}`)
+      }
     }
   }
 
-  console.log(msg)
-  console.log(`You: ${humanScore}`)
-  console.log(`CPU: ${computerScore}`)
+  playRound(getHumanChoice(), getComputerChoice())
+  playRound(getHumanChoice(), getComputerChoice())
+  playRound(getHumanChoice(), getComputerChoice())
+  playRound(getHumanChoice(), getComputerChoice())
+  playRound(getHumanChoice(), getComputerChoice())
 }
