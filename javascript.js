@@ -8,7 +8,7 @@ function getComputerChoice() {
   if (randNum > 0.66666) {
     return 'paper';
   } else if (randNum > 0.33333) {
-    return 'scissors';
+    return 'scissor';
   } else {
     return 'rock';
   }
@@ -64,4 +64,5 @@ function playRound(humanChoice, computerChoice) {
     }
   }
 
+  console.log(msg)
 }
