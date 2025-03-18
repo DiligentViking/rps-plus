@@ -16,7 +16,7 @@ function getComputerChoice() {
 
 
 function getHumanChoice() {
-  return prompt('rock, paper, scissor.')
+  return prompt('rock, paper, scissor.').toLowerCase()
 }
 
 
@@ -24,32 +24,32 @@ let humanScore = 0
 let computerScore = 0
 
 function playRound(humanChoice, computerChoice) {
-  humanChoice = humanChoice.toLowerCase()
-  // Initialize two vars
-  let msgPart1
-  let msgPart2
-  // If human and computer have the same move, log "It's a tie! Paper slithers on paper."
+  let msg
 
-  // If human has paper [clunky way for now]
-    // If computer has scissor
-      // msgPart1 is "You lose!"
-      // msgPart2 is "Scissor cuts down paper."
-    // If computer has rock
-      // msgPart1 is "You win!"
-      // msgPart2 is "Paper permeates rock. (somehow)"
-  // If human has scissor
-    // If computer has rock
-      // msgPart1 is "You lose!"
-      // msgPart2 is "Rock clobbers scissors."
-    // If compouter has paper
-      // msgPart1 is "You win!"
-      // msgPart2 is "Scissor cuts down paper."
-  // If human has rock
-    // If computer has paper
-      // msgPart1 is "You lose!"
-      // msgPart2 is "Paper permeates rock. (somehow"
-    // If computer has scissor
-      // msgPart1 is "You win!"
-      // msgPart2 is "Rock clobbers scissors."
+  if (humanChoice == 'rock') {
+    if (computerChoice == 'rock') {
+      msg = "It's a tie! Rock bumps against rock."
+    } else if (computerChoice == 'paper') {
+      msg = "You lose! Paper permeates rock. (somehow)"
+    } else if (computerChoice == 'scissor') {
+      msg = "You win! Rock clobbers scissor"
+    }
+  } else if (humanChoice == 'paper') {
+    if (computerChoice == 'rock') {
+      msg = "You win! Paper permeates rock. (somehow)"
+    } else if (computerChoice == 'paper') {
+      msg = "It's a tie! Paper slithers on paper."
+    } else if (computerChoice == 'scissor') {
+      msg = "You lose! Scissor cuts down paper"
+    }
+  } else if (humanChoice == 'scissor') {
+    if (computerChoice == 'rock') {
+      msg = "You lose! Rock clobbers scissor"
+    } else if (computerChoice == 'paper') {
+      msg = "You win! Scissor cuts down paper"
+    } else if (computerChoice == 'scissor') {
+      msg = "It's a tie! Scissor wedge on scissor."
+    }
+  }
 
 }
