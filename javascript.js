@@ -62,12 +62,12 @@ function playGame() {
         msg = "It's a tie! Scissor wedge on scissor.";
         humanScore += 1;
         computerScore += 1;
+      }
+    }
 
     console.log(msg)
     console.log(`You: ${humanScore}`)
     console.log(`CPU: ${computerScore}`)
-      }
-    }
   }
 
   playRound(getHumanChoice(), getComputerChoice())
