@@ -2,6 +2,11 @@
 // ima just gonna follow the steps
 
 
+function getHumanChoice() {
+  return prompt('rock, paper, scissor.').toLowerCase()
+}
+
+
 function getComputerChoice() {
   let randNum = Math.random();  // ill play with this in console to get a feel for this which wasn't covered by TOP
   
@@ -15,13 +20,9 @@ function getComputerChoice() {
 }
 
 
-function getHumanChoice() {
-  return prompt('rock, paper, scissor.').toLowerCase()
-}
-
-
 let humanScore = 0
 let computerScore = 0
+
 
 function playRound(humanChoice, computerChoice) {
   let msg
@@ -65,4 +66,6 @@ function playRound(humanChoice, computerChoice) {
   }
 
   console.log(msg)
+  console.log(`You: ${humanScore}`)
+  console.log(`CPU: ${computerScore}`)
 }
