@@ -1,7 +1,3 @@
-// console.log("Hello World")
-// ima just gonna follow the steps
-
-
 function getHumanChoice() {
   return prompt('rock, paper, scissor.').toLowerCase()
 }
@@ -30,8 +26,6 @@ function playGame() {
     if (humanChoice == 'rock') {
       if (computerChoice == 'rock') {
         msg = "It's a tie! Rock bumps against rock.";
-        humanScore += 1;
-        computerScore += 1;
       } else if (computerChoice == 'paper') {
         msg = "You lose! Paper permeates rock. (somehow)";
         computerScore += 1;
@@ -45,8 +39,6 @@ function playGame() {
         humanScore += 1;
       } else if (computerChoice == 'paper') {
         msg = "It's a tie! Paper slithers on paper.";
-        humanScore += 1;
-        computerScore += 1;
       } else if (computerChoice == 'scissor') {
         msg = "You lose! Scissor cuts down paper";
         computerScore += 1;
@@ -60,8 +52,6 @@ function playGame() {
         humanScore += 1;
       } else if (computerChoice == 'scissor') {
         msg = "It's a tie! Scissor wedge on scissor.";
-        humanScore += 1;
-        computerScore += 1;
       }
     }
 
