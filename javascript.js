@@ -28,27 +28,39 @@ function playRound(humanChoice, computerChoice) {
 
   if (humanChoice == 'rock') {
     if (computerChoice == 'rock') {
-      msg = "It's a tie! Rock bumps against rock."
+      msg = "It's a tie! Rock bumps against rock.";
+      humanScore += 1;
+      computerScore += 1;
     } else if (computerChoice == 'paper') {
-      msg = "You lose! Paper permeates rock. (somehow)"
+      msg = "You lose! Paper permeates rock. (somehow)";
+      computerScore += 1;
     } else if (computerChoice == 'scissor') {
-      msg = "You win! Rock clobbers scissor"
+      msg = "You win! Rock clobbers scissor";
+      humanScore += 1;
     }
   } else if (humanChoice == 'paper') {
     if (computerChoice == 'rock') {
-      msg = "You win! Paper permeates rock. (somehow)"
+      msg = "You win! Paper permeates rock. (somehow)";
+      humanScore += 1;
     } else if (computerChoice == 'paper') {
-      msg = "It's a tie! Paper slithers on paper."
+      msg = "It's a tie! Paper slithers on paper.";
+      humanScore += 1;
+      computerScore += 1;
     } else if (computerChoice == 'scissor') {
-      msg = "You lose! Scissor cuts down paper"
+      msg = "You lose! Scissor cuts down paper";
+      computerScore += 1;
     }
   } else if (humanChoice == 'scissor') {
     if (computerChoice == 'rock') {
-      msg = "You lose! Rock clobbers scissor"
+      msg = "You lose! Rock clobbers scissor";
+      computerScore += 1;
     } else if (computerChoice == 'paper') {
-      msg = "You win! Scissor cuts down paper"
+      msg = "You win! Scissor cuts down paper";
+      humanScore += 1;
     } else if (computerChoice == 'scissor') {
-      msg = "It's a tie! Scissor wedge on scissor."
+      msg = "It's a tie! Scissor wedge on scissor.";
+      humanScore += 1;
+      computerScore += 1;
     }
   }
 
