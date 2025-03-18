@@ -55,16 +55,22 @@ function playGame() {
       }
     }
 
+    console.log(`You: ${humanChoice}`)
+    console.log(`CPU: ${computerChoice}`)
     console.log(msg)
-    console.log(`You: ${humanScore}`)
-    console.log(`CPU: ${computerScore}`)
+    console.log(`Score: You ${humanScore} :: CPU ${computerScore}`)
+    console.log('----------')
   }
 
-  playRound(getHumanChoice(), getComputerChoice())
-  playRound(getHumanChoice(), getComputerChoice())
-  playRound(getHumanChoice(), getComputerChoice())
-  playRound(getHumanChoice(), getComputerChoice())
-  playRound(getHumanChoice(), getComputerChoice())
+  while (humanScore < 5 && computerScore < 5) {
+    playRound(getHumanChoice(), getComputerChoice());
+  }
+
+  if (computerScore > humanScore) {
+    console.log('THE COMPUTER HAS WON THE GAME');
+  } else {
+    console.log('THE HUMAN HAS WON THE GAME');
+  }
 }
 
 
