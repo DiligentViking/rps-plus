@@ -61,7 +61,15 @@ function playGame() {
   const rockBtn = document.querySelector('#rock');
   rockBtn.addEventListener('click', () => {
     playRound('rock', getComputerChoice());
-  });  // im confused that playRound can be called here (but how else will i get the params in?)
+  });  // a func inside a func?
+  const paperBtn = document.querySelector('#paper');
+  paperBtn.addEventListener('click', () => {
+    playRound('paper', getComputerChoice());
+  })
+  const scissorBtn = document.querySelector('#scissor');
+  scissorBtn.addEventListener('click', () => {
+    playRound('scissor', getComputerChoice());
+  })
 }
 
 
