@@ -58,19 +58,32 @@ function playGame() {
     document.querySelector('#score').textContent = `Score: You ${humanScore} :: CPU ${computerScore}`;
   }
 
+  function checkWinner(winScore) {
+    const winMsg = document.querySelector('#winMsg');
+    if (humanScore >= winScore) {
+      winMsg.textContent = 'THE HUMAN IS THE WINNER';
+    } else if (computerScore >= winScore) {
+      winMsg.textContent = 'THE COMPUTER IS THE WINNER';
+    }
+  }
+
   // consider optimizing into one event listener
   const rockBtn = document.querySelector('#rock');
   rockBtn.addEventListener('click', () => {
     playRound('rock', getComputerChoice());
+    checkWinner(5);
   });  // a func inside a func?
   const paperBtn = document.querySelector('#paper');
   paperBtn.addEventListener('click', () => {
     playRound('paper', getComputerChoice());
+    checkWinner(5);
   })
   const scissorBtn = document.querySelector('#scissor');
   scissorBtn.addEventListener('click', () => {
     playRound('scissor', getComputerChoice());
+    checkWinner(5);
   })
+
 }
 
 
