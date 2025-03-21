@@ -80,7 +80,6 @@ function playGame(winScore) {
       if (checkWinner()) selection.remove();
     }
   })
-
 }
 
 
