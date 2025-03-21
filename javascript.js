@@ -1,8 +1,3 @@
-function getHumanChoice() {
-  return prompt('rock, paper, scissor.').toLowerCase()
-}
-
-
 function getComputerChoice() {
   let randNum = Math.random();  // ill play with this in console to get a feel for this which wasn't covered by TOP
   
@@ -62,16 +57,13 @@ function playGame() {
     console.log('----------')
   }
 
-  while (humanScore < 5 && computerScore < 5) {
-    playRound(getHumanChoice(), getComputerChoice());
-  }
-
-  if (computerScore > humanScore) {
-    console.log('THE COMPUTER HAS WON THE GAME');
-  } else {
-    console.log('THE HUMAN HAS WON THE GAME');
-  }
+  // consider optimizing into one event listener
+  const rockBtn = document.querySelector('#rock');
+  rockBtn.addEventListener('click', () => {
+    playRound('rock', getComputerChoice());
+  });  // im confused that playRound can be called here (but how else will i get the params in?)
 }
+
 
 
 playGame()
