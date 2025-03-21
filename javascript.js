@@ -50,11 +50,12 @@ function playGame() {
       }
     }
 
-    console.log(`You: ${humanChoice}`)
-    console.log(`CPU: ${computerChoice}`)
-    console.log(msg)
-    console.log(`Score: You ${humanScore} :: CPU ${computerScore}`)
-    console.log('----------')
+    // we update instead of add (which i could do by creating the p elems or something)
+    const results = document.querySelector('#results');
+    document.querySelector('#youChoice').textContent = `You: ${humanChoice}`;
+    document.querySelector('#cpuChoice').textContent = `CPU: ${computerChoice}`;
+    document.querySelector('#matchMsg').textContent = `${msg}`;
+    document.querySelector('#score').textContent = `Score: You ${humanScore} :: CPU ${computerScore}`;
   }
 
   // consider optimizing into one event listener
